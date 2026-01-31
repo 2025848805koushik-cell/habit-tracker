@@ -29,20 +29,35 @@ function updateStats() {
   document.getElementById("progress").innerText = percent + "%";
 }
 
-function render() {
+function renderHabits() {
   const list = document.getElementById("habitList");
   list.innerHTML = "";
 
-  habits.forEach((h, i) => {
+  habits.forEach((habit, index) => {
     const li = document.createElement("li");
-    li.textContent = h.name;
-    if (h.done) li.classList.add("done");
-    li.onclick = () => toggle(i);
+    li.className = "habit-item" + (habit.done ? " done" : "");
+
+    const left = document.createElement("div");
+    left.className = "habit-left";
+
+    const check = document.createElement("div");
+    check.className = "habit-check" + (habit.done ? " done" : "");
+    check.onclick = () => {
+      habits[index].done = !habits[index].done;
+      saveHabits();
+    };
+
+    const name = document.createElement("div");
+    name.className = "habit-name";
+    name.innerText = habit.name;
+
+    left.appendChild(check);
+    left.appendChild(name);
+    li.appendChild(left);
     list.appendChild(li);
   });
-
-  updateStats();
 }
+
 
 function addHabit() {
   const input = document.getElementById("habitInput");
@@ -289,6 +304,13 @@ function scheduleNotification() {
 // auto-start if already set
 if ("Notification" in window && localStorage.getItem("reminderTime")) {
   scheduleNotification();
+}
+function updateAll() {
+  renderHabits();
+  renderCalendar();
+  renderChart();
+  updateRings();
+  renderHabitTable();
 }
 
 
