@@ -16,7 +16,24 @@
 
   <h1>Ultimate Habit Tracker</h1>
   <div class="reminder">
-  <input type="time" id="reminderTime" step="60">
+  <<div class="time-picker">
+  <select id="reminderHour">
+    <ReminderHours></ReminderHours>
+  </select>
+
+  <select id="reminderMinute">
+    <option value="00">00</option>
+    <option value="15">15</option>
+    <option value="30">30</option>
+    <option value="45">45</option>
+  </select>
+
+  <select id="reminderPeriod">
+    <option value="AM">AM</option>
+    <option value="PM">PM</option>
+  </select>
+</div>
+
   <button onclick="setReminder()">Set Daily Reminder ⏰</button>
 </div>
   <button onclick="toggleTheme()" class="theme-btn">
