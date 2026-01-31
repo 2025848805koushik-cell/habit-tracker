@@ -235,3 +235,57 @@ input[type="time"] {
   border: none;
   font-size: 14px;
 }
+/* ===== DAILY OVERVIEW ===== */
+.daily-overview {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  border-radius: 18px;
+  padding: 30px;
+  margin: 30px 0;
+  box-shadow: 0 0 40px rgba(56,189,248,0.15);
+}
+
+.daily-card {
+  text-align: center;
+}
+
+.daily-card h3 {
+  letter-spacing: 2px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.daily-percent {
+  font-size: 64px;
+  font-weight: 700;
+  margin: 10px 0;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.daily-sub {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.daily-mini {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+
+.daily-mini div {
+  text-align: center;
+}
+
+.daily-mini span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.daily-mini strong {
+  display: block;
+  font-size: 22px;
+  margin-top: 5px;
+  color: #e5e7eb;
+}
