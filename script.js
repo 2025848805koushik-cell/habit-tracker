@@ -225,5 +225,52 @@ function exportData() {
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js");
 }
+function setReminder() {
+  const time = document.getElementById("reminderTime").value;
+  if (!time) return alert("Please select a time");
+
+  localStorage.setItem("reminderTime", time);
+
+  Notification.requestPermission().then(permission => {
+    if (permission === "granted") {
+      alert("Daily reminder set at " + time);
+      scheduleNotification();
+    } else {
+      alert("Notification permission denied");
+    }
+  });
+}
+
+function scheduleNotification() {
+  const time = localStorage.getItem("reminderTime");
+  if (!time) return;
+
+  const [hour, minute] = time.split(":").map(Number);
+  const now = new Date();
+  let notifyAt = new Date();
+  notifyAt.setHours(hour, minute, 0, 0);
+
+  if (notifyAt < now) {
+    notifyAt.setDate(notifyAt.getDate() + 1);
+  }
+
+  const delay = notifyAt - now;
+
+  setTimeout(() => {
+    new Notification("Habit Tracker ⏰", {
+      body: "Don’t forget to complete your habits today!",
+      icon: "icon-192.png"
+    });
+
+    // schedule again for next day
+    setTimeout(scheduleNotification, 24 * 60 * 60 * 1000);
+  }, delay);
+}
+
+// auto-start if already set
+if ("Notification" in window && localStorage.getItem("reminderTime")) {
+  scheduleNotification();
+}
+
 
 
