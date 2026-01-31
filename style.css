@@ -344,3 +344,61 @@ input[type="time"] {
   text-decoration: line-through;
   opacity: .6;
 }
+/* ===== DAILY GRID ===== */
+.daily-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  margin: 16px 0 28px;
+}
+
+.day-card {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 0 22px rgba(56,189,248,.12);
+}
+
+.day-card h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #e5e7eb;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #334155;
+  display: inline-block;
+  margin-right: 6px;
+}
+.dot.done { background: #22c55e; }
+
+/* ===== PROGRESS BARS ===== */
+.progress-bars {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.bar span {
+  display: block;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.bar-track {
+  height: 10px;
+  background: #020617;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  transition: width .4s ease;
+}
