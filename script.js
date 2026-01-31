@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const hourSelect = document.getElementById("reminderHour");
+  if (!hourSelect) return;
+
+  for (let i = 1; i <= 12; i++) {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.text = i;
+    hourSelect.appendChild(opt);
+  }
+});
 const today = new Date();
 const year = today.getFullYear();
 const month = today.getMonth();
