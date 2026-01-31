@@ -289,3 +289,58 @@ input[type="time"] {
   margin-top: 5px;
   color: #e5e7eb;
 }
+/* ===== HABITS LIST UI ===== */
+.habits-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: grid;
+  gap: 12px;
+}
+
+.habit-item {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 25px rgba(56,189,248,0.12);
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+
+.habit-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(56,189,248,0.2);
+}
+
+.habit-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.habit-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #38bdf8;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.habit-check.done {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+
+.habit-name {
+  font-size: 16px;
+  color: #e5e7eb;
+}
+
+.habit-item.done .habit-name {
+  text-decoration: line-through;
+  opacity: .6;
+}
