@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ultimate Habit Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <h1>Ultimate Habit Tracker</h1>
+  <button onclick="toggleTheme()" class="theme-btn">
+  Toggle Theme 🌙
+</button>
+  <div class="stats">
+    <div class="card">
+      <p>Daily Progress</p>
+      <h2 id="progress">0%</h2>
+    </div>
+    <div class="card">
+      <p>Total Habits</p>
+      <h2 id="total">0</h2>
+    </div>
+    <div class="card">
+      <p>Completed</p>
+      <h2 id="done">0</h2>
+    </div>
+  </div>
+
+  <div class="add-habit">
+    <input type="text" id="habitInput" placeholder="Add new habit">
+    <button onclick="addHabit()">Add</button>
+  </div>
+
+  <ul id="habitList"></ul>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+<ul id="habitList"></ul>
+<h2 class="month-title">This Month</h2>
+<div id="calendar"></div>
+<h2 class="section-title">Progress Overview</h2>
+
+<div class="rings">
+  <div class="ring-card">
+    <svg width="120" height="120">
+      <circle cx="60" cy="60" r="50"></circle>
+      <circle cx="60" cy="60" r="50" id="dailyRing"></circle>
+    </svg>
+    <p>Daily</p>
+  </div>
+
+  <div class="ring-card">
+    <svg width="120" height="120">
+      <circle cx="60" cy="60" r="50"></circle>
+      <circle cx="60" cy="60" r="50" id="weeklyRing"></circle>
+    </svg>
+    <p>Weekly</p>
+  </div>
+
+  <div class="ring-card">
+    <svg width="120" height="120">
+      <circle cx="60" cy="60" r="50"></circle>
+      <circle cx="60" cy="60" r="50" id="monthlyRing"></circle>
+    </svg>
+    <p>Monthly</p>
+  </div>
+</div>
+<h2 class="section-title">Habits Overview</h2>
+<table class="habit-table">
+  <thead>
+    <tr>
+      <th>Habit</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="habitTableBody"></tbody>
+</table>
+<h2 class="section-title">Analytics</h2>
+<button onclick="exportData()">Export CSV 📤</button>
+<div class="charts">
+
+  <!-- Line chart (already there) -->
+  <canvas id="monthlyChart"></canvas>
+
+  <!-- 👇 এইখানেই paste করবে -->
+  <canvas id="weeklyChart" style="margin-top:30px;"></canvas>
+
+</div>
