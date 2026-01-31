@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html
   <meta charset="UTF-8">
   <title>Ultimate Habit Tracker</title>
-
+  
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#020617">
 
@@ -47,12 +46,24 @@
     <div class="card">
       <p>Total Habits</p>
       <h2 id="total">0</h2>
+    <section class="daily-overview">
+  <div class="daily-card">
+    <h3>DAILY PROGRESS</h3>
+    <div class="daily-percent" id="progress">0%</div>
+    <p class="daily-sub">Completed today</p>
+  </div>
+
+  <div class="daily-mini">
+    <div>
+      <span>Total</span>
+      <strong id="total">0</strong>
     </div>
-    <div class="card">
-      <p>Completed</p>
-      <h2 id="done">0</h2>
+    <div>
+      <span>Done</span>
+      <strong id="done">0</strong>
     </div>
   </div>
+</section>
 
   <div class="add-habit">
     <input type="text" id="habitInput" placeholder="Add new habit">
