@@ -222,3 +222,16 @@ input[type="time"] {
   z-index: 9999;
   cursor: pointer;
 }
+.time-picker {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.time-picker select {
+  padding: 8px;
+  border-radius: 6px;
+  background: #e5e7eb;
+  border: none;
+  font-size: 14px;
+}
