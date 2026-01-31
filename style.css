@@ -205,3 +205,15 @@ circle:last-child {
   background: #e5e7eb;
   color: #020617;
 }
+.reminder {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.reminder input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+}
