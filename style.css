@@ -344,6 +344,10 @@ input[type="time"] {
   text-decoration: line-through;
   opacity: .6;
 }
+.habit-item.done {
+  background: linear-gradient(135deg, #052e16, #020617);
+}
+
 /* ===== DAILY GRID ===== */
 .daily-grid {
   display: grid;
@@ -401,4 +405,53 @@ input[type="time"] {
   width: 0%;
   background: linear-gradient(90deg, #38bdf8, #22c55e);
   transition: width .4s ease;
+}
+/* ===== DASHBOARD GRID ===== */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.left-panel,
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.section-title {
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #38bdf8, transparent);
+  margin-top: 6px;
+}
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 28px;
+  letter-spacing: 1px;
 }
