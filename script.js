@@ -311,7 +311,51 @@ function updateAll() {
   renderChart();
   updateRings();
   renderHabitTable();
+
+  // 👇 এই দুইটা নতুন
+  renderDailyGrid();
+  updateBars();
 }
+
+function renderDailyGrid() {
+  const grid = document.getElementById("dailyGrid");
+  if (!grid) return;
+  grid.innerHTML = "";
+
+  habits.forEach(h => {
+    const card = document.createElement("div");
+    card.className = "day-card";
+
+    const title = document.createElement("h4");
+    title.innerText = h.name;
+
+    const dot = document.createElement("span");
+    dot.className = "dot" + (h.done ? " done" : "");
+
+    card.appendChild(title);
+    card.appendChild(dot);
+    grid.appendChild(card);
+  });
+}
+function updateBars() {
+  const total = habits.length || 1;
+  const done = habits.filter(h => h.done).length;
+
+  const weeklyPercent = Math.round((done / total) * 100);
+  const monthlyPercent = weeklyPercent; // simple v1 (same logic)
+
+  const w = document.getElementById("weeklyBar");
+  const m = document.getElementById("monthlyBar");
+  if (w) w.style.width = weeklyPercent + "%";
+  if (m) m.style.width = monthlyPercent + "%";
+}
+renderHabits();
+renderCalendar();
+renderChart();
+updateRings();
+renderHabitTable();
+renderDailyGrid();
+updateBars();
 
 
 
